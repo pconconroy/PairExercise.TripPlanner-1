@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -8,6 +10,48 @@ body {
   background-color: #c1b5ad;
 }
 #map {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav content content"
+    "footer footer footer";
+
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
   height: 100vh;
-  width: 100vw;
+}
+
+header {
+  grid-area: header;
+  background: #f49926;
+}
+
+nav,
+aside {
+  background: #f2ead3;
+}
+
+nav {
+  grid-area: nav;
+}
+
+aside {
+  grid-area: side;
+}
+
+main {
+  grid-area: content;
+  background: #f9f5f0;
+}
+
+footer {
+  grid-area: footer;
+  background: #321313;
+  color: #f6f6f6;
 }
