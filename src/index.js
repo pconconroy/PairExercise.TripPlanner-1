@@ -21,3 +21,9 @@ markerDomEl.style.background = "black";
 new mapboxgl.Marker(markerDomEl).setLngLat([-87.6354, 41.8885]).addTo(map);
 const marker = buildMarker("hotels", [50, 50]);
 marker.addTo(map);
+
+const hotelSelect = document.getElementById("hotels");
+hotelSelect.addEventListener("change", event => {
+  console.log("event");
+  buildMarker("hotels", [-87.6342808, 41.8888176]).addTo(map);
+});
