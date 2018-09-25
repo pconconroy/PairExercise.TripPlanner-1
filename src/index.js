@@ -1,6 +1,7 @@
 console.log("Hello from JavaScript");
 
 const mapboxgl = require("mapbox-gl");
+const buildMarker = require("./marker");
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoicGNvbmNvbnJveSIsImEiOiJjam1pNGI1bHgwMTUyM3FuemVxcnRzOTJlIn0.gmmmkQQ_RVtVxILrekR1Ug";
@@ -16,5 +17,7 @@ const markerDomEl = document.createElement("div");
 markerDomEl.style.width = "32px";
 markerDomEl.style.height = "39px";
 // markerDomEl.style.backgroundImage = 'url("http://i.imgur.com/WbMOfMl.png")';
-markerDomEl.style.background = 'black';
+markerDomEl.style.background = "black";
 new mapboxgl.Marker(markerDomEl).setLngLat([-87.6354, 41.8885]).addTo(map);
+const marker = buildMarker("hotels", [50, 50]);
+marker.addTo(map);
